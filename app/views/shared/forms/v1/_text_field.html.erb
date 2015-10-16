@@ -1,0 +1,11 @@
+<%
+  f = attributes[:f]
+  name = attributes[:name]
+%>
+
+<fieldset class="form__fieldset">
+  <div class="field">
+    <%= f.label name, class: 'field__label' %>
+    <%= f.text_field name, class: 'field__control' %>
+  </div>
+</fieldset>

@@ -2,11 +2,11 @@
 
 <%= form_for member_details_form, as: :member_details, url: action_url, method: :patch do |f| %>
   <%= f.fields_for :user do |fn| %>
-    <%= text_input(fn, :login) %>
-    <%= text_input(fn, :email) %>
+    <%= input(f: fn, type: :text_field, version: :v1, name: :login) %>
+    <%= input(f: fn, type: :text_field, version: :v1, name: :email) %>
   <% end %>
 
   <%= f.fields_for :user_profile do |fn| %>
-    <%= text_input(fn, :full_name) %>
+    <%= input(f: fn, type: :text_field, version: :v1, name: :full_name) %>
   <% end %>
 <% end %>
