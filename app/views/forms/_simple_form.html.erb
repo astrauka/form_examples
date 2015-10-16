@@ -1,0 +1,13 @@
+<h3><%= way %> way</h3>
+
+<% # Check out https://github.com/plataformatec/simple_form#custom-inputs %>
+<%= simple_form_for member_details_form, as: :member_details, url: action_url, method: :patch do |f| %>
+  <%= f.fields_for :user do |fn| %>
+    <%= fn.input :login %>
+    <%= fn.input :email %>
+  <% end %>
+
+  <%= f.fields_for :user_profile do |fn| %>
+    <%= fn.input :full_name %>
+  <% end %>
+<% end %>

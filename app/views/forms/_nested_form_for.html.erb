@@ -1,0 +1,28 @@
+<h3><%= way %> way</h3>
+
+<%= form_for member_details_form, as: :member_details, url: action_url, method: :patch do |f| %>
+  <%= f.fields_for :user do |fn| %>
+    <fieldset class="form__fieldset">
+      <div class="field">
+        <%= fn.label :login, class: 'field__label' %>
+        <%= fn.text_field :login, class: 'field__control' %>
+      </div>
+    </fieldset>
+
+    <fieldset class="form__fieldset">
+      <div class="field">
+        <%= fn.label :email, class: 'field__label' %>
+        <%= fn.text_field :email, class: 'field__control' %>
+      </div>
+    </fieldset>
+  <% end %>
+
+  <%= f.fields_for :user_profile do |fn| %>
+    <fieldset class="form__fieldset">
+      <div class="field">
+        <%= fn.label :full_name, class: 'field__label' %>
+        <%= fn.text_field :full_name, class: 'field__control' %>
+      </div>
+    </fieldset>
+  <% end %>
+<% end %>

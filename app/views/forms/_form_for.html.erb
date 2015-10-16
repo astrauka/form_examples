@@ -1,0 +1,12 @@
+<h3><%= way %> way</h3>
+
+<%= form_for :member_details, url: action_url, method: :patch do |f| %>
+  <%= f.fields_for :user do |fu| %>
+    <fieldset class="form__fieldset">
+      <div class="field">
+        <%= fu.label :login, class: 'field__label' %>
+        <%= fu.text_field :login, value: user.login, class: 'field__control' %>
+      </div>
+    </fieldset>
+  <% end %>
+<% end %>
